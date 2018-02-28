@@ -17,6 +17,7 @@
     "lint:check": "eslint packages scripts website",
     "precommit": "lint-staged",
     "prerelease": "yarn test && yarn compile",
+    "preinstall": "ls .git ||  yarn compile",
     "release": "node ./scripts/release/publish.js",
     "postrelease": "yarn website:release && yarn benchmarks:release",
     "test": "yarn flow && yarn lint:check && yarn jest --runInBand"
